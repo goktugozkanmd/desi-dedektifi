@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Desi Dedektifi</title>
+<meta name="description" content="Trendyol kargo faturanızdaki hatalı desi ve mükerrer kesintileri bulur, itiraz Excel'ini hazırlar. Tarama ücretsiz.">
+<style>
+:root{--bg:#f9fafb;--fg:#17202a;--mut:#56626e;--card:#fff;--line:#dde3ea;--ac:#c2410c;--acfg:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#12161b;--fg:#e8ecf0;--mut:#9aa6b2;--card:#1b2128;--line:#2e3742;--ac:#ff8a4c;--acfg:#12161b}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--fg)}
+.w{max-width:960px;margin:auto;padding:0 16px}header{padding:56px 0 32px}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.1;margin:0 0 14px;letter-spacing:-.02em}h2{font-size:24px;margin:0 0 14px}
+.lead{font-size:19px;color:var(--mut);max-width:660px}section{padding:28px 0;border-top:1px solid var(--line)}
+.btn{display:inline-block;background:var(--ac);color:var(--acfg);padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:600;margin:16px 10px 0 0}
+.btn.s{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.c{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.c b{display:block;margin-bottom:4px}.c span{color:var(--mut);font-size:15px}.n{font-size:28px;font-weight:700;color:var(--ac)}
+.tag{display:inline-block;font-size:12px;border:1px solid var(--ac);color:var(--ac);border-radius:99px;padding:1px 9px}
+footer{padding:28px 0 48px;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}a{color:var(--ac)}li{margin:6px 0}
+</style></head><body><div class="w">
+<header><span class="tag">Erken sürüm · ücretsiz tarama</span>
+<h1>Trendyol kargo faturanızda fazla ödediğiniz parayı bulalım.</h1>
+<p class="lead">Kargo faturası Excel'inizi ve ürün ölçülerinizi verin. Ürün kartınızdan hesaplanan desiden büyük faturalanan gönderileri ve çift kesilen kargoları listeleriz; itiraz Excel'ini hazır veririz.</p>
+<a class="btn" href="mailto:drgoktugozkan@gmail.com?subject=Desi%20Dedektifi%20-%20%C3%BCcretsiz%20tarama&body=Merhaba%2C%20kargo%20faturam%C4%B1n%20%C3%BCcretsiz%20taranmas%C4%B1n%C4%B1%20istiyorum.%0AMa%C4%9Faza%3A%20%0AAyl%C4%B1k%20sipari%C5%9F%20say%C4%B1s%C4%B1%3A%20">Ücretsiz taratmak istiyorum</a>
+<a class="btn s" href="#neden">Neden gerekli?</a></header>
+
+<section id="neden"><h2>Süreç bugün nasıl işliyor?</h2>
+<p>Kamuya açık kaynaklardan:</p><ul>
+<li>Satıcı Portalı'na göre hatalı desi itirazı için gönderi bazlı bir Excel hazırlanıp panelden canlı destekle gönderiliyor; kargo firmasının kararı için 20-25 gün sonra vaka numarasıyla tekrar yazmak gerekiyor. <a href="https://saticiportali.com/trendyol-hatali-desi-itirazi-nasil-yapilir/">Kaynak</a></li>
+<li>Trendyol'un resmi geliştirici dokümanı kargo faturası kalemlerini gönderi kodu, sipariş no, tutar ve desi alanlarıyla veriyor; yani kontrol için gereken veri satıcının elinde. <a href="https://developers.trendyol.com/docs/kargo-faturas%C4%B1-detaylar%C4%B1">Kaynak</a></li>
+<li>Şikayetvar'da bir satıcı, 75 TL'ye sattığı ürünün kargosunun "orta paket" girildiğini ve eline 31 TL kaldığını yazıyor (28.11.2024, kullanıcı beyanı). <a href="https://www.sikayetvar.com/trendyol-express/trendyol-express-kargo-desi-bilgisi-yanlisligi-ve-ekstra-ucret-kesintisi">Kaynak</a></li></ul>
+<p style="color:var(--mut)">Bu sayfada kazanç vaadi veya oran yok: sonuç dosyanıza bağlıdır. Kargo firması gerçekten doğru ölçmüş olabilir; itirazın kabulü Trendyol ve kargo firmasının kararıdır.</p></section>
+
+<section><h2>Ne yapıyoruz?</h2><div class="g">
+<div class="c"><b>Hatalı desi</b><span>Ürün kartınızdaki en/boy/yükseklik/ağırlıktan beklenen desiyi hesaplar, faturadakiyle karşılaştırırız.</span></div>
+<div class="c"><b>Mükerrer kesinti</b><span>Aynı gönderi kodu iki kez faturalanmış mı bakarız.</span></div>
+<div class="c"><b>Ürün tutarsızlığı</b><span>Kataloğu olmayan ürünlerde, aynı ürünün farklı desiyle faturalandığı gönderileri işaretleriz.</span></div>
+<div class="c"><b>İade kargosu</b><span>İade kargosu gönderi kargosundan pahalıysa inceleme listesine ekleriz.</span></div></div>
+<p>Çıktı: Satıcı Portalı'nda tarif edilen sütunlarla itiraz Excel'i, tek sayfa PDF özet ve canlı desteğe yazılacak mesaj.</p></section>
+
+<section><h2>Nasıl çalışır?</h2><div class="g">
+<div class="c"><div class="n">1</div><b>Dosyaları gönderin</b><span>Satıcı panelinden indirdiğiniz kargo faturası Excel'i + ürün ölçü tablonuz. İsterseniz API anahtarıyla da çekilebilir; anahtar vermek zorunda değilsiniz.</span></div>
+<div class="c"><div class="n">2</div><b>Ücretsiz tarama</b><span>Tahmini fazla ödeme ve kural bazlı dağılımı önce size gösteririz.</span></div>
+<div class="c"><div class="n">3</div><b>İtiraz dosyası</b><span>Beğenirseniz raporu ve itiraz Excel'ini teslim ederiz.</span></div></div></section>
+
+<section><h2>Fiyat</h2><div class="g">
+<div class="c"><b>Tarama</b><div class="n">Ücretsiz</div><span>Tahmini toplam ve kural özeti.</span></div>
+<div class="c"><b>Rapor + itiraz dosyası</b><div class="n">499 TL</div><span>Tek seferlik. Gönderi bazlı Excel ve PDF özet.</span></div>
+<div class="c"><b>Başarı payı</b><div class="n">%15</div><span>Peşin ödeme yok; yalnız Trendyol'dan geri alınan tutarın %15'i.</span></div></div></section>
+
+<section><h2>Gizlilik</h2><p>Dosyanız yalnızca analiz için kullanılır, iş bitince silinir. Sizden Trendyol şifresi istemeyiz.</p></section>
+
+<footer><a class="btn" href="mailto:drgoktugozkan@gmail.com?subject=Desi%20Dedektifi">drgoktugozkan@gmail.com</a>
+<p>Desi formülü (en×boy×yükseklik÷3000) üçüncü taraf kaynaklardan alınmıştır: <a href="https://saticiportali.com/desi/">Satıcı Portalı</a>, <a href="https://www.kargonomi.com.tr/blog/kargo-desi-hesaplama/">Kargonomi</a>. Trendyol veya kargo firmasıyla bağlantımız yoktur.</p></footer>
+</div></body></html>
